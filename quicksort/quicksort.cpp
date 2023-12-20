@@ -10,7 +10,7 @@ void QuickSort(vector<int> &a, int left, int right) {
   int pivot_index = (left + right)/2; // 適当にpivot用の中点を選ぶ
   int pivot = a[pivot_index];
   swap(a[pivot_index], a[right -1]); // pivotと右端をswap
-  
+
   int i = left; // iは以下の操作によって左詰めされたpivot未満要素の右端を表す(初期値:0)
   for (int j = left; j < right -1; ++j) {
     // j番目の要素がpivotよりも小さければiの左に移動
@@ -37,5 +37,6 @@ int main() {
 
   QuickSort(a, 0, N);
 
+  cout << "クイックソートによるソート後: ";
   for (int i=0; i < N; ++i) cout << a[i] << " ";
 }
