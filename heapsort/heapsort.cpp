@@ -7,7 +7,7 @@ using namespace std;
 void Heapify(vector<int> &a, int i, int N) {
   int child1 = 2 * i + 1;    // 左の子供
   if (child1 >= N) return;   // 子供がないなら終了
-                             //
+
   // 子供同士を比較して大きい方をchild1とする
   if (child1 + 1 < N && a[child1 + 1] > a[child1]) {
     // 右の子供があり、かつ左の子供より右の子供の方が大きい
