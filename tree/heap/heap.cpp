@@ -29,12 +29,12 @@ struct Heap {
     heap.pop_back(); // 頂点を削除
     int i = 0; // 根から降ろしていく
     while (i * 2 + 1 < (int)heap.size()) {
-      // 子頂点同士を比較して大きい方をchild_leftとする
-      int child_left = i * 2 + 1, child_right = i * 2 + 2;
-      if (child_right < (int)heap.size() && heap[child_right] > heap[child_left]) child_left = child_right;
-      if (heap[child_left] <= x) break; // 逆転がなければ終了
-      heap[i] = heap[child_left]; // 自分の値を子頂点の値にする
-      i = child_left; // 自分は下に行く
+      // 子頂点同士を比較して大きい方をchild1とする
+      int child1 = i * 2 + 1, child2 = i * 2 + 2;
+      if (child2 < (int)heap.size() && heap[child2] > heap[child1]) child1 = child2;
+      if (heap[child1] <= x) break; // 逆転がなければ終了
+      heap[i] = heap[child1]; // 自分の値を子頂点の値にする
+      i = child1; // 自分は下に行く
     }
     heap[i] = x; // xは最終的にはこの位置に持ってくる
   }
